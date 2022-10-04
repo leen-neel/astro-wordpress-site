@@ -1,0 +1,20 @@
+---
+import { API_URL } from '../..//lib/api';
+
+const response = await fetch(`${API_URL}posts`, {
+	method: 'GET',
+});
+const posts = await response.json();
+
+export function getStaticPaths() {
+	return {
+		params: {
+			slug: 1,
+		},
+	};
+}
+
+const id = Astro.params;
+---
+
+<h1>{id}</h1>
