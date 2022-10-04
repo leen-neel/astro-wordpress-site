@@ -1,7 +1,13 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    // Needed for TypeScript intellisense in the template inside Vue files
-    "jsx": "preserve"
-  }
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		// Needed for TypeScript intellisense in the template inside Vue files
+		"jsx": "preserve",
+		"baseUrl": ".",
+		"allowJs": true,
+		"types": ["astro/client"],
+		"paths": {
+			"~/*": ["src/*"]
+		}
+	}
 }

@@ -1,5 +1,5 @@
 ---
-import { getDinos, getDino } from '../../lib/api';
+import { getDinos, getDino } from '~/lib/api';
 
 export async function getStaticPaths() {
 	let dinos = await getDinos();
@@ -15,6 +15,6 @@ export async function getStaticPaths() {
 const dino = await getDino(Astro.params.slug);
 ---
 
-<h1 class="text-xl">{dino.title.rendered}</h1>
+<h1 class="text-green-500 text-4xl">{dino.title.rendered}</h1>
 
 <p set:html={dino.content.rendered}></p>
