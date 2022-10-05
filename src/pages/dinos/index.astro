@@ -13,6 +13,21 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
+	<section
+		class="hero min-h-screen bg-base-200 bg-[url('images/herobg.jpg')] backdrop-blur-lg bg-fixed"
+		style="height: 30vh"
+	>
+		<div
+			class="backdrop-blur-lg h-full w-full flex flex-col justify-center items-center"
+		>
+			<h1 class="text-5xl font-extrabold mb-2">Life in Pangea</h1>
+			<p class="text-center lg:text-center p-2">
+				Here are some descriptions of the creatures you’ll be able to play as
+				and find in Aldian of Ancients.
+			</p>
+		</div>
+	</section>
+
 	<section class="p-4 flex flex-row flex-wrap justify-center">
 		<Posts />
 	</section>
