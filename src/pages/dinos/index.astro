@@ -1,1 +1,10 @@
-<h2>dinos</h2>
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Posts from '~/components/Posts.vue';
+---
+
+<BaseLayout>
+	<section class="p-4 flex flex-row flex-wrap justify-center">
+		<Posts />
+	</section>
+</BaseLayout>

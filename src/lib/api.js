@@ -11,12 +11,12 @@ export async function fetchAPI(path) {
 }
 
 export async function getDinos() {
-	let posts = await fetchAPI('dinos?per_page=50');
+	let posts = await fetchAPI('dinos?per_page=50&_embed');
 	return posts;
 }
 
 export async function getDino(slug) {
-	let posts = await fetchAPI(`dinos?slug=${slug}`);
+	let posts = await fetchAPI(`dinos?slug=${slug}&_embed`);
 	return posts[0];
 }
 
