@@ -1,5 +1,5 @@
 ---
-import { getDinos, getDino } from '~/lib/api';
+import { getDinos, getDino, fetchAPI } from '~/lib/api';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 
 import { SITE } from '~/config';
@@ -16,7 +16,9 @@ export async function getStaticPaths() {
 }
 
 const dino = await getDino(Astro.params.slug);
-console.log(dino);
+
+let rhizo = await fetchAPI('dinos?slug=rhizodus');
+console.log(rhizo);
 
 const meta = {
 	title: `${dino.title.rendered} | ${SITE.title}`,

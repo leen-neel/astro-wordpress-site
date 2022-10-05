@@ -16,7 +16,7 @@ export async function getDinos() {
 }
 
 export async function getDino(slug) {
-	let posts = await fetchAPI(`dinos?slug=${slug}&_embed`);
+	let posts = await fetchAPI(`dinos?slug=${slug}&_embed&endme`);
 	return posts[0];
 }
 
