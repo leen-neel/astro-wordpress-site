@@ -1,0 +1,29 @@
+---
+import '~/assets/base.css';
+
+import MetaTags from '~/components/core/MetaTags.astro';
+
+const { meta = {} } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+
+		<MetaTags {meta} />
+	</head>
+
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

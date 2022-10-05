@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^2.0.2",
     "@astrojs/vue": "^1.1.0",
+    "@astrolib/seo": "^0.2.1",
     "astro": "^1.4.4",
     "astro-icon": "^0.7.3",
     "daisyui": "^2.31.0",
