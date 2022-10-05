@@ -1,5 +1,8 @@
 ---
 import { getDinos, getDino } from '~/lib/api';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+
+import { SITE } from '~/config';
 
 export async function getStaticPaths() {
 	let dinos = await getDinos();
@@ -13,8 +16,28 @@ export async function getStaticPaths() {
 }
 
 const dino = await getDino(Astro.params.slug);
+
+const meta = {
+	title: `${dino.title.rendered} | ${SITE.title}`,
+	description: SITE.description,
+	image: dino._embedded['wp:featuredmedia']['0'].source_url,
+	url: SITE.url,
+};
 ---
 
-<h1 class="text-green-500 text-4xl">{dino.title.rendered}</h1>
+<BaseLayout {meta}>
+	<section class="w-full p-4">
+		<figure class="bg-white flex justify-center rounded-sm">
+			<img
+				src={dino._embedded['wp:featuredmedia']['0'].source_url}
+				alt={dino.title}
+			/>
+		</figure>
 
-<p set:html={dino.content.rendered}></p>
+		<div class="bg-slate-700 p-5 rounded-sm my-2">
+			<h2>{dino.title.rendered}</h2>
+		</div>
+
+		<article class="prose" set:html={dino.content.rendered}></article>
+	</section>
+</BaseLayout>
