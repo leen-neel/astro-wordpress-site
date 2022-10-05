@@ -1,9 +1,18 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import Posts from '~/components/Posts.vue';
+
+import { SITE } from '~/../../config';
+
+const meta = {
+	title: `Dinosaurs | ${SITE.title}`,
+	description: SITE.description,
+	image: SITE.image,
+	url: SITE.url,
+};
 ---
 
-<BaseLayout>
+<BaseLayout {meta}>
 	<section class="p-4 flex flex-row flex-wrap justify-center">
 		<Posts />
 	</section>
