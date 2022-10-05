@@ -2,6 +2,7 @@
 import '~/assets/base.css';
 
 import MetaTags from '~/components/core/MetaTags.astro';
+import Header from '~/sections/Header.astro';
 
 const { meta = {} } = Astro.props;
 ---
@@ -23,7 +24,9 @@ const { meta = {} } = Astro.props;
 
 	<body>
 		<main>
-			<slot />
+			<Header>
+				<slot />
+			</Header>
 		</main>
 	</body>
 </html>

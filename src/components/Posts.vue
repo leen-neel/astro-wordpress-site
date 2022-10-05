@@ -13,7 +13,7 @@
 		<div class="card-body">
 			<h2 class="justify-center card-title">{{ dino.title.rendered }}</h2>
 			<div class="card-actions justify-center">
-				<a :href="`dinos/${dino.slug}`" target="_blank" class="btn btn-primary"
+				<a :href="`/dinos/${dino.slug}`" target="_blank" class="btn btn-primary"
 					>Read more</a
 				>
 			</div>

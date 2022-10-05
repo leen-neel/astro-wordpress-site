@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 }
 
 const dino = await getDino(Astro.params.slug);
+console.log(dino);
 
 const meta = {
 	title: `${dino.title.rendered} | ${SITE.title}`,
@@ -36,6 +37,14 @@ const meta = {
 
 		<div class="bg-slate-700 p-5 rounded-sm my-2">
 			<h2>{dino.title.rendered}</h2>
+		</div>
+		<div class="flex">
+			<div class="bg-slate-700 p-5 rounded-sm my-2 w-full">
+				<h3 class="text-4xl font-extrabold">Info</h3>
+				<p><strong>Size:</strong> {dino.acf.size}</p>
+				<p><strong>Weight:</strong> {dino.acf.weight}</p>
+				<p><strong>Habitat:</strong> {dino.acf.habitat}</p>
+			</div>
 		</div>
 
 		<article class="prose" set:html={dino.content.rendered}></article>
