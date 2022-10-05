@@ -1,9 +1,13 @@
 ---
+import `~/assets/base.css`
+
 import Hero from '~/sections/Hero.astro';
 import About from '~/sections/About.astro';
+import Community from '~/sections/Community.astro';
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -18,6 +22,7 @@ import About from '~/sections/About.astro';
 		<main>
 			<Hero />
 			<About />
+			<Community />
 		</main>
 	</body>
 </html>
