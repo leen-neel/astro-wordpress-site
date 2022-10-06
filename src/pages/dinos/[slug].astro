@@ -47,7 +47,11 @@ const meta = {
 				<p><strong>Habitat:</strong> {dino.acf.habitat}</p>
 			</div>
 
-			<article class="prose lg:p-3" set:html={dino.content.rendered}></article>
+			<article
+				class="text-elipsis overflow-hidden lg:p-3"
+				set:html={dino.content.rendered}
+			>
+			</article>
 		</div>
 	</section>
 </BaseLayout>

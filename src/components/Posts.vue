@@ -12,8 +12,15 @@
 		</figure>
 		<div class="card-body">
 			<h2 class="justify-center card-title">{{ dino.title.rendered }}</h2>
+			<p
+				class="text-clip overflow-hidden"
+				v-html="getFirstLine(dino.content.rendered)"
+			></p>
 			<div class="card-actions justify-center">
-				<a :href="`/dinos/${dino.slug}`" target="_blank" class="btn btn-primary"
+				<a
+					:href="`/dinos/${dino.slug}`"
+					target="_blank"
+					class="btn btn-primary mt-2"
 					>Read more</a
 				>
 			</div>
@@ -30,8 +37,15 @@ export default {
 
 		dinos.value = await getDinos();
 
+		let getFirstLine = (paragraph) => {
+			let lines = paragraph.split('.');
+
+			return lines[0] + lines[1] + '...';
+		};
+
 		return {
 			dinos,
+			getFirstLine,
 		};
 	},
 };
