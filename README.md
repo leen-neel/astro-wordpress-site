@@ -1,10 +1,7 @@
-# Astro + Vue Example
+# Astro 👨🏻‍🚀 + WordPress REST API
 
-```
-npm create astro@latest -- --template framework-vue
-```
+This is a "clone" of [Norian Games'](https://norian.studio/) website.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-vue)
+The original site uses WordPress as the backend.
 
-This example showcases Astro working with [Vue](https://v3.vuejs.org/).
-
+I used Astro to build a static site and use WordPress's REST API to get all content from the site.
