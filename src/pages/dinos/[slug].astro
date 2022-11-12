@@ -17,8 +17,6 @@ export async function getStaticPaths() {
 
 const dino = await getDino(Astro.params.slug);
 
-let rhizo = await fetchAPI('dinos?slug=rhizodus');
-
 const meta = {
 	title: `${dino.title.rendered} | ${SITE.title}`,
 	description: SITE.description,
